@@ -16,7 +16,7 @@ gem "decidim", DECIDIM_VERSION
 gem "decidim-slider", path: "."
 
 gem "bootsnap", "~> 1.7"
-gem "faker", "~> 2.14"
+gem "faker", "~> 3.3"
 gem "rspec", "~> 3.0"
 
 group :development, :test do
