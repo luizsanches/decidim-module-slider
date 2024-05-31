@@ -13,8 +13,12 @@
       height: rem-calc(375);
     }
 
-    @include breakpoint(xxxlarge) {
+    @include breakpoint(xlarge) {
       height: rem-calc(420);
+    }
+
+    @include breakpoint(xxlarge) {
+      height: rem-calc(520);
     }
   }
   .orbit-caption {

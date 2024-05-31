@@ -1,38 +1,23 @@
 <% if has_slides? %>
   <section class="extended home-section">
-    <div class="row">
-      <div class="column">
-
-        <div class="orbit" role="region" data-orbit id="slider-block" <%= settings %>>
-          <div class="orbit-wrapper">
-            <div class="orbit-controls">
-
-            </div>
-            <div class="orbit-container">
-              <%= cells.map(&:call) %>
-            </div>
-          </div>
-          <nav class="orbit-bullets" aria-label="slider-navigation">
-            <a class="orbit-previous"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.previous_slide") %></span>
-              <%= icon "chevron-left", class: "icon--small", role: "img" %>
-            </a>
-
-            <button class="is-active pause-btn" data-slide="0">
-              <span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1) %></span>
-              <span class="show-for-sr" data-slide-active-label><%= t("decidim.slider.homepage.main.current_slide") %></span>
-            </button>
-
-            <%= cells.map(&:bullet).drop(1).join("\n") %>
-
-            <a class="orbit-next"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.next_slide") %></span>
-              <%= icon "chevron-right", class: "icon--small", role: "img" %>
-            </a>
-
-          </nav>
+    <div class="orbit" role="region" data-orbit id="slider-block" aria-label="Slider" <%= settings %>>
+      <div class="orbit-wrapper">
+        <div class="orbit-controls">
+          <button class="orbit-previous">
+            <span class="show-for-sr"><%= t("decidim.slider.homepage.main.previous_slide") %></span>&#9664;&#xFE0E;
+          </button>
+          <button class="orbit-next">
+            <span class="show-for-sr"><%= t("decidim.slider.homepage.main.next_slide") %></span>&#9654;&#xFE0E;
+          </button>
         </div>
+        <ul class="orbit-container">
+          <%= cells.map(&:call) %>
+        </ul>
       </div>
+      <nav class="orbit-bullets" aria-label="slider-navigation">
+        <%= cells.map(&:bullet).join("\n") %>
+      </nav>
     </div>
-
     <%= stylesheet_pack_tag "decidim_slider" %>
     <%= javascript_pack_tag "decidim_slider" %>
   </section>

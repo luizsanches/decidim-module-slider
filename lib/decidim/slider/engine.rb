@@ -23,7 +23,7 @@ module Decidim
           content_block.public_name_key = "decidim.content_blocks.slider.name"
 
           content_block.settings do |settings|
-            settings.attribute :upload_size, type: :integer, default: 500
+            settings.attribute :upload_size, type: :integer, default: 50
             settings.attribute :autoplay, type: :boolean, default: true
           end
         end

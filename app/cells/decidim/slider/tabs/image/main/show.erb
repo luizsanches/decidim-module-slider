@@ -1,23 +1,14 @@
-<div class="orbit-slide<% if index.zero? %> is-active<% end %>">
-  <div class="row ">
-    <div class="column orbit-figure">
-      <div class="row small-up-1 smallmedium-up-2">
-        <div class="column text-center">
-          <img src="<%= image_url %>" alt="<%= accessibility_label %>" />
-        </div>
-        <div class="column">
-          <h2 class="heading4"><%= title %></h2>
-          <p><%= content %></p>
-
-          <% if valid_link? %>
-            <%= link_to cta, url, class: "button action", target: "blank" %>
-          <% end %>
-
-          <% if secondary_link? %>
-            <%= link_to secondary_cta, secondary_url, class: "action primary", target: "blank" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<li class="orbit-slide<% if index.zero? %> is-active<% end %>">
+  <figure class="orbit-figure">
+    <img src="<%= image_url %>" class="orbit-image" alt="<%= accessibility_label %>" />
+  </figure>
+  <center>
+    <h4><strong><%= title %></strong> - <%= content %></h4>
+    <% if valid_link? %>
+      <%= link_to cta, url, class: "button action", target: "blank" %>
+    <% end %>
+    <% if secondary_link? %>
+      <%= link_to secondary_cta, secondary_url, class: "button action secondary", target: "blank" %>
+    <% end %>
+  </center>
+</li>
